@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Phone Scanner</string>
+    <string name="take_picture">Take picture</string>
+    <string name="scan_document">Scan document</string>
+</resources>
