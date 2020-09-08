@@ -1,7 +1,6 @@
 package com.example.phonescanner
 
 import android.Manifest
-import android.R.attr
 import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
@@ -27,15 +26,15 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var takePicture: Button
-    lateinit var adjust: Button
+    lateinit var scanDocument: Button
 
     lateinit var imagePre: ImageView
     lateinit var imagePost: ImageView
 
     var persistentImageName: String = "scanned.jpg"
 
-    val IMAGE_CAPTURE = 10
-    val DOCUMENT_SCAN = 20
+    private val IMAGE_CAPTURE = 10
+    private val DOCUMENT_SCAN = 20
 
     val REQUEST_ID_MULTIPLE_PERMISSIONS = 7
 
@@ -44,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         takePicture = findViewById(R.id.takePicture)
-        adjust = findViewById(R.id.adjust)
+        scanDocument = findViewById(R.id.scanDocument)
 
         imagePre =  findViewById(R.id.imagePre)
         imagePost =  findViewById(R.id.imagePost)
@@ -62,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(cameraImgIntent, IMAGE_CAPTURE)
         }
 
-        adjust.setOnClickListener {
+        scanDocument.setOnClickListener {
             val intent = Intent(applicationContext, ScanActivity::class.java)
             intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, ScanConstants.OPEN_CAMERA)
             startActivityForResult(intent, DOCUMENT_SCAN)

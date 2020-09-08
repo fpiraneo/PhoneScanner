@@ -50,6 +50,7 @@ and on my app manifest:
 ## How to use the library
 On the activity / fragment class:
 
+Start a scanning:
 ```kotlin
     private val DOCUMENT_SCAN = 20
         
@@ -60,7 +61,11 @@ On the activity / fragment class:
         intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, ScanConstants.OPEN_CAMERA)
         startActivityForResult(intent, DOCUMENT_SCAN)
     }
-        
+```
+
+...and to catch the result:
+
+```kotlin   
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

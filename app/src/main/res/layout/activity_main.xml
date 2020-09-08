@@ -22,7 +22,7 @@
             android:text="@string/take_picture" />
 
         <Button
-            android:id="@+id/adjust"
+            android:id="@+id/scanDocument"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
